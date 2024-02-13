@@ -1,0 +1,11 @@
+framework module BaladorSDK {
+  umbrella header "BaladorSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module BaladorSDK.Swift {
+  header "BaladorSDK-Swift.h"
+  requires objc
+}
