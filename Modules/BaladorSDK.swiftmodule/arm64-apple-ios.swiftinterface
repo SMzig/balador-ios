@@ -1,0 +1,149 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name BaladorSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+@_exported import BaladorSDK
+import CoreLocation
+import DeveloperToolsSupport
+import Foundation
+import ImageIO
+import LanguageManager_iOS
+import MobileCoreServices
+import ObjectiveC
+import Photos
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc public protocol MTSlideToOpenDelegate {
+  @objc func mtSlideToOpenDelegateDidFinish(_ sender: BaladorSDK.MTSlideToOpenView)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class MTSlideToOpenView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) final public let textLabel: UIKit.UILabel
+  @objc @_Concurrency.MainActor(unsafe) final public let sliderTextLabel: UIKit.UILabel
+  @objc @_Concurrency.MainActor(unsafe) final public let thumnailImageView: UIKit.UIImageView
+  @objc @_Concurrency.MainActor(unsafe) final public let sliderHolderView: UIKit.UIView
+  @objc @_Concurrency.MainActor(unsafe) final public let draggedView: UIKit.UIView
+  @objc @_Concurrency.MainActor(unsafe) final public let view: UIKit.UIView
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: (any BaladorSDK.MTSlideToOpenDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) public var animationVelocity: Swift.Double
+  @objc @_Concurrency.MainActor(unsafe) public var sliderViewTopDistance: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var thumbnailViewTopDistance: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var thumbnailViewStartingDistance: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var textLabelLeadingDistance: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var showSliderText: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var animationChangedEnabledBlock: ((Swift.Bool) -> Swift.Void)?
+  @objc @_Concurrency.MainActor(unsafe) public var sliderCornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var sliderBackgroundColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var textColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var slidingColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var thumbnailColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var labelText: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var textFont: UIKit.UIFont {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public func resetStateWithAnimation(_ animated: Swift.Bool)
+  @objc deinit
+}
+public struct ToastStyle {
+}
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public func setImage(string: Swift.String?, color: UIKit.UIColor? = nil, circular: Swift.Bool = false, stroke: Swift.Bool = false, textAttributes: [Foundation.NSAttributedString.Key : Any]? = nil)
+  @_Concurrency.MainActor(unsafe) public func getImage(string: Swift.String?, color: UIKit.UIColor? = nil, circular: Swift.Bool = false, stroke: Swift.Bool = false, textAttributes: [Foundation.NSAttributedString.Key : Any]? = nil) -> UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) public func getAppProfilePlaceholder(string: Swift.String?, bgColor: UIKit.UIColor = UIColor.gray, circular: Swift.Bool = false, font: UIKit.UIFont? = nil, fontSize: CoreFoundation.CGFloat = 30) -> UIKit.UIImage?
+}
+extension UIKit.UIColor {
+  public static var random: UIKit.UIColor {
+    get
+  }
+  public static func colorHash(name: Swift.String?) -> UIKit.UIColor
+}
+extension Swift.String {
+  public var initials: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class SnakePageControl : UIKit.UIView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var pageCount: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var progress: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var currentPage: Swift.Int {
+    get
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var activeTint: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var inactiveTint: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var indicatorPadding: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var indicatorRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class BaladorHelper : ObjectiveC.NSObject {
+  public func getMerchantBranches(SecretKey: Swift.String, UserPhoneNumber: Swift.String, UserISOCode: Swift.String, merchantID: Swift.String, language: LanguageManager_iOS.Languages.RawValue)
+  @objc override dynamic public init()
+  @objc deinit
+}
